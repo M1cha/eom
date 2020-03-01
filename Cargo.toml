@@ -14,15 +14,12 @@ readme        = "README.md"
 
 [features]
 default   = []
-static    = ["ndarray-linalg/openblas-static",  "fftw/source"]
-intel-mkl = ["ndarray-linalg/intel-mkl", "fftw/intel-mkl"]
 
 [dependencies]
 num-traits  = { version = "0.2.11",  default-features = false }
 num-complex = { version = "0.2.4",  default-features = false }
 derive-new  = { version = "0.5",  default-features = false }
 ndarray     = { version = "0.13", default-features = false }
-fftw        = { version = "0.6",  default-features = false }
 
 [dependencies.ndarray-linalg]
 version = "0.12"
@@ -31,6 +28,7 @@ default-features = false
 
 [dev-dependencies]
 criterion = "0.2"
+lapack-src = { version = "*", features = ["openblas"] }
 
 [[bench]]
 name = "ode"
